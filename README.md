@@ -45,3 +45,27 @@ sudo journalctl -u docker
 ```
 to check for errors causing the daemon to stop.
 * Ensure sufficient disk space is available, as lack of space can prevent Docker from running.
+
+3.) 
+* Verify that the TEST EC2 instance's security group allows inbound traffic on port 443.
+* Ensure no network ACLs or firewalls are blocking port 443.
+* Confirm that the TEST EC2 instance is in a subnet that has an Internet Gateway attached or uses a NAT Gateway for internet access. and ensure outbound HTTPS traffic is allowed through the NAT or Internet Gateway.
+* Check if the service running on TEST EC2 is properly configured to listen on port 443. and ensure the service has a valid SSL certificate for HTTPS.
+* Verify that the DNS record is correctly pointing to the public IP address of the TEST EC2 instance. and confirm that DNS propagation has completed and is resolving correctly from external networks.
+* Ensure the SSL certificate on the TEST EC2 machine is valid and correctly installed.
+* Check the service logs on the TEST EC2 instance for any errors related to HTTPS or SSL connections.
+
+4.) Install telnet:
+```
+sudo yum install telnet -y
+```
+* If the installation fails, it's likely that the required repository is either disabled or missing.
+* Ensure the extras repository is enabled:
+```
+sudo amazon-linux-extras enable epel
+```
+* After enabling the repository, update your packages and install Telnet:
+```
+sudo yum update -y
+sudo yum install telnet -y
+```
