@@ -1,4 +1,6 @@
 # home_task
+1.) all the files in the repo
+
 2. a) 
 * Check that the TEST EC2 instance is properly routed through the DEV TGW, ensuring it can communicate with the Egress VPC and Inspection VPC.
 * Verify if the route table in the TEST Spoke VPC allows for traffic destined to the Egress VPC and Inspection VPC via the Transit Gateway.
@@ -69,3 +71,5 @@ sudo amazon-linux-extras enable epel
 sudo yum update -y
 sudo yum install telnet -y
 ```
+
+5.) all the files in the repo
